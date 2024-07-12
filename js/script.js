@@ -246,21 +246,6 @@ async function main() {
                         updateColors(oldUniqueID, oldUniqueIDclass, "white", "Play Now");
                     }
                 });
-
-                let span = e.getElementsByTagName('span')[0];
-                span.addEventListener("click", () => {
-                    playAudio(span.className);
-                    curTrackindex = formattedSongs.indexOf(span.className);
-                    oldUniqueID = uniqueID;
-                    oldUniqueIDclass = uniqueIDclass;
-                    uniqueID = span;
-                    uniqueIDclass = span.className.replace(/[^a-zA-Z0-9]/g, '_');
-                    updateColors(uniqueID, uniqueIDclass, "#1dd65f", "Playing");
-
-                    if (oldUniqueIDclass && oldUniqueIDclass !== uniqueIDclass) {
-                        updateColors(oldUniqueID, oldUniqueIDclass, "white", "Play Now");
-                    }
-                });
             });
         });
     });
